@@ -8,13 +8,13 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{39a7a7ef-4a50-4c62-9d12-d493cd6b1ab6}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
     <RootNamespace>scw_mssql</RootNamespace>
     <AssemblyName>scw_mssql</AssemblyName>
-    <ModelCollation>1033, CI</ModelCollation>
+    <ModelCollation>1033,CS</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -23,6 +23,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Latin1_General_100_CS_AS</DefaultCollation>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -57,5 +58,120 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Database" />
+    <Folder Include="Database\InitialImportScripts" />
+    <Folder Include="Database\ReferenceData" />
+    <Folder Include="Database\Tables" />
+    <Folder Include="Database\Views" />
+    <Folder Include="Database\Tables\Staging" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Database\InitialImportScripts\import_api_log_EU.sql" />
+    <None Include="Database\InitialImportScripts\import_api_log_US.sql" />
+    <None Include="Database\InitialImportScripts\import_assessments_EU.sql" />
+    <None Include="Database\InitialImportScripts\import_assessments_US.sql" />
+    <None Include="Database\InitialImportScripts\import_challenges_EU.sql" />
+    <None Include="Database\InitialImportScripts\import_game013_log_EU.sql" />
+    <None Include="Database\InitialImportScripts\import_game013_log_US.sql" />
+    <None Include="Database\InitialImportScripts\import_tournaments_EU.sql" />
+    <None Include="Database\InitialImportScripts\import_tournaments_US.sql" />
+    <None Include="Database\InitialImportScripts\import_users_EU.sql" />
+    <None Include="Database\InitialImportScripts\ImportCompanies_EU.sql" />
+    <None Include="Database\ReferenceData\ins_CompanySize.sql" />
+    <None Include="Database\ReferenceData\ins_CustomerType.sql" />
+    <None Include="Database\ReferenceData\ins_Industry.sql" />
+    <None Include="Database\ReferenceData\ins_Language.sql" />
+    <None Include="Database\ReferenceData\ins_LicenceAllowanceType.sql" />
+    <None Include="Database\ReferenceData\ins_Region.sql" />
+    <None Include="Database\ReferenceData\ins_UserPreferenceValues.sql" />
+    <Build Include="Database\Tables\ApiLog.sql" />
+    <Build Include="Database\Tables\ApiLogFwdPath.sql" />
+    <Build Include="Database\Tables\ApiLogQuery.sql" />
+    <Build Include="Database\Tables\ApiPreference.sql" />
+    <Build Include="Database\Tables\ApplicationCategory.sql" />
+    <Build Include="Database\Tables\Assessment.sql" />
+    <Build Include="Database\Tables\AssessmentAttempt.sql" />
+    <Build Include="Database\Tables\AssessmentAttemptLanguage.sql" />
+    <Build Include="Database\Tables\Challenge.sql" />
+    <Build Include="Database\Tables\ChallengeAttempt.sql" />
+    <Build Include="Database\Tables\ChallengeAttemptCategory.sql" />
+    <Build Include="Database\Tables\ChallengeAttemptStage.sql" />
+    <Build Include="Database\Tables\ChallengeAttemptStageAttempt.sql" />
+    <Build Include="Database\Tables\ChallengeHunk.sql" />
+    <Build Include="Database\Tables\ChallengeHunkFile.sql" />
+    <Build Include="Database\Tables\ChallengeHunkFileLine.sql" />
+    <Build Include="Database\Tables\ChallengeSourceCommit.sql" />
+    <Build Include="Database\Tables\ChallengeSourceCommitParent.sql" />
+    <Build Include="Database\Tables\Company.sql" />
+    <Build Include="Database\Tables\CompanyAllowance.sql" />
+    <Build Include="Database\Tables\CompanyLanguage.sql" />
+    <Build Include="Database\Tables\CompanySize.sql" />
+    <Build Include="Database\Tables\CustomerType.sql" />
+    <Build Include="Database\Tables\Game_013_log.sql" />
+    <Build Include="Database\Tables\Industry.sql" />
+    <Build Include="Database\Tables\IntercomLog.sql" />
+    <Build Include="Database\Tables\Language.sql" />
+    <Build Include="Database\Tables\LicenceAllowanceType.sql" />
+    <Build Include="Database\Tables\Participant.sql" />
+    <Build Include="Database\Tables\Quest.sql" />
+    <Build Include="Database\Tables\QuestAttempt.sql" />
+    <Build Include="Database\Tables\QuestChallenge.sql" />
+    <Build Include="Database\Tables\QuestLanguage.sql" />
+    <Build Include="Database\Tables\Realm.sql" />
+    <Build Include="Database\Tables\RealmLevel.sql" />
+    <Build Include="Database\Tables\Region.sql" />
+    <Build Include="Database\Tables\Repository.sql" />
+    <Build Include="Database\Tables\RepositoryLanguage.sql" />
+    <Build Include="Database\Tables\SCWUser.sql" />
+    <Build Include="Database\Tables\State.sql" />
+    <Build Include="Database\Tables\Team.sql" />
+    <Build Include="Database\Tables\TeamAllowance.sql" />
+    <Build Include="Database\Tables\TeamLanguage.sql" />
+    <Build Include="Database\Tables\Tournament.sql" />
+    <Build Include="Database\Tables\TournamentLanguage.sql" />
+    <Build Include="Database\Tables\TournamentLeaderboard.sql" />
+    <Build Include="Database\Tables\UserAuth.sql" />
+    <Build Include="Database\Tables\UserChallengeLog.sql" />
+    <Build Include="Database\Tables\UserInviteReminders.sql" />
+    <Build Include="Database\Tables\UserLoginHistory.sql" />
+    <Build Include="Database\Tables\UserPreferences.sql" />
+    <Build Include="Database\Tables\UserPreferenceValues.sql" />
+    <Build Include="Database\Tables\UserProfile.sql" />
+    <Build Include="Database\Tables\UserRole.sql" />
+    <Build Include="Database\Tables\UserTutorial.sql" />
+    <None Include="Database\Views\Active_Company_TournamentsRun.sql" />
+    <None Include="Database\Views\Active_Customer_Language.sql" />
+    <None Include="Database\Views\Active_Customer_Licensing.sql" />
+    <None Include="Database\Views\Assessments_Taken.sql" />
+    <Build Include="Database\Views\CompanyLanguages_Licensed.sql" />
+    <None Include="Database\Views\Country_State.sql" />
+    <None Include="Database\Views\Customer_Region_Country_State.sql" />
+    <None Include="Database\Views\CustomerStatusSummary.sql" />
+    <None Include="Database\Views\LicensesbyCustomer.sql" />
+    <None Include="Database\Views\MismatchedCustomers.sql" />
+    <Build Include="Database\Views\TOP_10_CompanyLanguages.sql" />
+    <Build Include="Database\Views\TOP_10_Industries.sql" />
+    <None Include="Database\Views\TournamentsbyCompany.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Database\ReferenceData\Script.InsertRefDataPostDeploy.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Database\Tables\ApiEventLog.sql" />
+    <Build Include="Database\Tables\Staging\stgCompanies.sql" />
+    <Build Include="Database\Tables\Staging\stgApiEventLog.sql" />
+    <Build Include="Database\Tables\Staging\stgAnonymousUsers.sql" />
+    <Build Include="Database\Tables\Staging\stgApiLog.sql" />
+    <Build Include="Database\Tables\Staging\stgIntercomLog.sql" />
+    <Build Include="Database\Tables\Staging\stgFeatureFlags.sql" />
+    <Build Include="Database\Tables\Staging\stgApiPreferences.sql" />
+    <Build Include="Database\Tables\Staging\stgTeams.sql" />
+    <Build Include="Database\Tables\Staging\stgUserChallengeLogs.sql" />
+    <Build Include="Database\Tables\Staging\stgUserPreferences.sql" />
+    <Build Include="Database\Tables\ApiEventLogCompany.sql" />
+    <Build Include="Database\Tables\ApiEventLogTeam.sql" />
+    <Build Include="Database\Tables\ApiEventLogSCWUser.sql" />
+    <Build Include="Database\Tables\Game_013_logStages.sql" />
+    <Build Include="Database\Tables\Game_013_logCategories.sql" />
   </ItemGroup>
 </Project>
