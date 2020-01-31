@@ -3,6 +3,7 @@
     [ParticipantObject_id]	NVARCHAR(40)			NOT NULL,
     [UserID]				INTEGER 				NOT NULL,
     [TournamentID]			INTEGER 				NOT NULL,
+	[LanguageID]			INTEGER 				NOT NULL,
     [ParticipantDisabled]	BIT						NOT NULL,
     [HomeCountry]			NCHAR(2)				NULL,
     [Points]				INTEGER					NOT NULL,
@@ -10,6 +11,7 @@
     
 	CONSTRAINT PK_Participant PRIMARY KEY CLUSTERED ([ParticipantID]),
 	CONSTRAINT FK_Participant_SCWUser_UserID FOREIGN KEY (UserID) REFERENCES [dbo].[SCWUser] (UserID),
-	CONSTRAINT FK_Participant_Tournament_TournamentID FOREIGN KEY (TournamentID) REFERENCES [dbo].[Tournament] (TournamentID)
+	CONSTRAINT FK_Participant_Tournament_TournamentID FOREIGN KEY (TournamentID) REFERENCES [dbo].[Tournament] (TournamentID),
+	CONSTRAINT FK_Participant_Language_LanguageID FOREIGN KEY (LanguageID) REFERENCES [dbo].[Language] (LanguageID)
 );
 

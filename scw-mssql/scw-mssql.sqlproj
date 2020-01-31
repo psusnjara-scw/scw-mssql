@@ -64,6 +64,8 @@
     <Folder Include="Database\Tables" />
     <Folder Include="Database\Views" />
     <Folder Include="Database\Tables\Staging" />
+    <Folder Include="Database\Logs" />
+    <Folder Include="Database\Logs\Schema" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database\InitialImportScripts\import_api_log_EU.sql" />
@@ -84,9 +86,6 @@
     <None Include="Database\ReferenceData\ins_LicenceAllowanceType.sql" />
     <None Include="Database\ReferenceData\ins_Region.sql" />
     <None Include="Database\ReferenceData\ins_UserPreferenceValues.sql" />
-    <Build Include="Database\Tables\ApiLog.sql" />
-    <Build Include="Database\Tables\ApiLogFwdPath.sql" />
-    <Build Include="Database\Tables\ApiLogQuery.sql" />
     <Build Include="Database\Tables\ApiPreference.sql" />
     <Build Include="Database\Tables\ApplicationCategory.sql" />
     <Build Include="Database\Tables\Assessment.sql" />
@@ -157,7 +156,6 @@
     <None Include="Database\ReferenceData\Script.InsertRefDataPostDeploy.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Database\Tables\ApiEventLog.sql" />
     <Build Include="Database\Tables\Staging\stgCompanies.sql" />
     <Build Include="Database\Tables\Staging\stgApiEventLog.sql" />
     <Build Include="Database\Tables\Staging\stgAnonymousUsers.sql" />
@@ -168,10 +166,17 @@
     <Build Include="Database\Tables\Staging\stgTeams.sql" />
     <Build Include="Database\Tables\Staging\stgUserChallengeLogs.sql" />
     <Build Include="Database\Tables\Staging\stgUserPreferences.sql" />
-    <Build Include="Database\Tables\ApiEventLogCompany.sql" />
-    <Build Include="Database\Tables\ApiEventLogTeam.sql" />
-    <Build Include="Database\Tables\ApiEventLogSCWUser.sql" />
     <Build Include="Database\Tables\Game_013_logStages.sql" />
     <Build Include="Database\Tables\Game_013_logCategories.sql" />
+    <Build Include="Database\Logs\ApiEventLog.sql" />
+    <Build Include="Database\Logs\ApiEventLogCompany.sql" />
+    <Build Include="Database\Logs\ApiEventLogSCWUser.sql" />
+    <Build Include="Database\Logs\ApiEventLogTeam.sql" />
+    <Build Include="Database\Logs\ApiLog.sql" />
+    <Build Include="Database\Logs\ApiLogFwdPath.sql" />
+    <Build Include="Database\Logs\ApiLogQuery.sql" />
+    <Build Include="Database\Logs\Schema\Log.sql" />
+    <Build Include="Database\Logs\ApiEventLogUserProfile.sql" />
+    <Build Include="Database\Logs\ApiEventLogUserRole.sql" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 ﻿
-CREATE TABLE [dbo].[ApiEventLogCompany] (
+CREATE TABLE [Log].[ApiEventLogCompany] (
     [ApiEventLogCompanyCompanyID]					INTEGER IDENTITY (1,1)	NOT NULL,
 	[ApiEventLogID]				BIGINT					NOT NULL,
     [CompaniesObject_id]		NVARCHAR(40)			NOT NULL,
@@ -22,8 +22,8 @@ CREATE TABLE [dbo].[ApiEventLogCompany] (
 	[DataSource]				NCHAR(2)				NOT NULL,
 
     CONSTRAINT PK_ApiEventLogCompany PRIMARY KEY CLUSTERED ([ApiEventLogCompanyCompanyID]),
-	CONSTRAINT FK_ApiEventLogCompany_ApiEventLog_ApiEventLogID FOREIGN KEY (ApiEventLogID) REFERENCES [dbo].[ApiEventLog] (ApiEventLogID)
-	--CONSTRAINT FK_ApiEventLogCompany_CompanySize_CompanySizeID FOREIGN KEY (CompanySizeID) REFERENCES [dbo].[CompanySize] (CompanySizeID),,
+	CONSTRAINT FK_ApiEventLogCompany_ApiEventLog_ApiEventLogID FOREIGN KEY (ApiEventLogID) REFERENCES [Log].[ApiEventLog] (ApiEventLogID)
+	--CONSTRAINT FK_ApiEventLogCompany_CompanySize_CompanySizeID FOREIGN KEY (CompanySizeID) REFERENCES [dbo].[CompanySize] (CompanySizeID),
 	--CONSTRAINT FK_ApiEventLogCompany_CustomerType_CustomerTypeID FOREIGN KEY (CustomerTypeID) REFERENCES [dbo].[CustomerType] (CustomerTypeID)
 	
 );

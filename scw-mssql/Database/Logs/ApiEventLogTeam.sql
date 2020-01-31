@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[ApiEventLogTeam] (
+﻿CREATE TABLE [Log].[ApiEventLogTeam] (
     [ApiEventLogTeamID]				INTEGER IDENTITY(1,1)	NOT NULL,
 	[ApiEventLogID]					BIGINT					NOT NULL,
     [TeamObject_id]					VARBINARY(12)			NOT NULL,
@@ -14,6 +14,6 @@
 	[CreatedDate]					DATETIME2				NOT NULL,  -- From object id
 
     CONSTRAINT PK_ApiEventLogTeam PRIMARY KEY CLUSTERED ([ApiEventLogTeamID]),
-	CONSTRAINT FK_ApiEventLogTeam_ApiEventLog_ApiEventLogID FOREIGN KEY (ApiEventLogID) REFERENCES [dbo].[ApiEventLog] (ApiEventLogID)
+	CONSTRAINT FK_ApiEventLogTeam_ApiEventLog_ApiEventLogID FOREIGN KEY (ApiEventLogID) REFERENCES [Log].[ApiEventLog] (ApiEventLogID)
 
 );	
