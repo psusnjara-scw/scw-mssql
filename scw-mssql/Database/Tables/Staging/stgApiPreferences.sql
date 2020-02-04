@@ -1,4 +1,6 @@
-﻿
+﻿/*
+  This is the staging table for scw_prod_alpha_api.preferences
+*/
 CREATE TABLE [dbo].[stgApiPreferences]
 (
 	[stgApiPreferencesID]		BIGINT IDENTITY(1,1)	NOT NULL,

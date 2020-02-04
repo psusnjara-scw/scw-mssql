@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [Log].[ApiEventLogTeam] (
-    [ApiEventLogTeamID]				INTEGER IDENTITY(1,1)	NOT NULL,
+    [ApiEventLogTeamID]				BIGINT IDENTITY(1,1)	NOT NULL,
 	[ApiEventLogID]					BIGINT					NOT NULL,
     [TeamObject_id]					VARBINARY(12)			NOT NULL,
     [CompanyID]						INTEGER					NOT NULL,

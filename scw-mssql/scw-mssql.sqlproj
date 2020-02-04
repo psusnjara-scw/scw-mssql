@@ -66,6 +66,8 @@
     <Folder Include="Database\Tables\Staging" />
     <Folder Include="Database\Logs" />
     <Folder Include="Database\Logs\Schema" />
+    <Folder Include="Database\Logs\InitialImportScripts" />
+    <Folder Include="Database\Logs\Staging" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database\InitialImportScripts\import_api_log_EU.sql" />
@@ -157,14 +159,10 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Database\Tables\Staging\stgCompanies.sql" />
-    <Build Include="Database\Tables\Staging\stgApiEventLog.sql" />
     <Build Include="Database\Tables\Staging\stgAnonymousUsers.sql" />
-    <Build Include="Database\Tables\Staging\stgApiLog.sql" />
-    <Build Include="Database\Tables\Staging\stgIntercomLog.sql" />
     <Build Include="Database\Tables\Staging\stgFeatureFlags.sql" />
     <Build Include="Database\Tables\Staging\stgApiPreferences.sql" />
     <Build Include="Database\Tables\Staging\stgTeams.sql" />
-    <Build Include="Database\Tables\Staging\stgUserChallengeLogs.sql" />
     <Build Include="Database\Tables\Staging\stgUserPreferences.sql" />
     <Build Include="Database\Tables\Game_013_logStages.sql" />
     <Build Include="Database\Tables\Game_013_logCategories.sql" />
@@ -178,5 +176,30 @@
     <Build Include="Database\Logs\Schema\Log.sql" />
     <Build Include="Database\Logs\ApiEventLogUserProfile.sql" />
     <Build Include="Database\Logs\ApiEventLogUserRole.sql" />
+    <Build Include="Database\Logs\ActivityLog.sql" />
+    <Build Include="Database\Logs\ActivityLogValue.sql" />
+    <Build Include="Database\Logs\Staging\stgActivityLog.sql" />
+    <Build Include="Database\Logs\Staging\stgApiEventLog.sql" />
+    <Build Include="Database\Logs\Staging\stgApiLog.sql" />
+    <Build Include="Database\Logs\Staging\stgIntercomLog.sql" />
+    <Build Include="Database\Logs\Staging\stgUserChallengeLogs.sql" />
+    <Build Include="Database\Tables\Staging\stgUsers.sql" />
+    <Build Include="Database\Tables\Staging\stgCategories.sql" />
+    <Build Include="Database\Tables\Staging\stgChallenges.sql" />
+    <Build Include="Database\Tables\Staging\stgDiffTrees.sql" />
+    <Build Include="Database\Tables\Staging\stgRepositories.sql" />
+    <Build Include="Database\Tables\Staging\stgSenseiGuidelines.sql" />
+    <Build Include="Database\Tables\Staging\stgSolutions.sql" />
+    <Build Include="Database\Tables\Staging\stgSourceCode.sql" />
+    <Build Include="Database\Tables\Staging\stgCategoryLabels.sql" />
+    <Build Include="Database\Tables\Staging\stgCourseInvitations.sql" />
+    <Build Include="Database\Tables\Staging\stgCourseTemplates.sql" />
+    <Build Include="Database\Tables\Staging\stgCourses.sql" />
+    <Build Include="Database\Tables\Staging\stgEntityCourseMapping.sql" />
+    <Build Include="Database\Tables\Staging\stgTaskAttempts.sql" />
+    <Build Include="Database\Tables\Staging\stgUserCourseMapping.sql" />
+    <Build Include="Database\Tables\Staging\stgCourseUsers.sql" />
+    <Build Include="Database\Tables\Staging\stgAssessmentAttempts.sql" />
+    <Build Include="Database\Tables\Staging\stgAssessments.sql" />
   </ItemGroup>
 </Project>
