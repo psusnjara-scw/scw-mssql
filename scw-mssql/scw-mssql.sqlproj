@@ -108,7 +108,6 @@
     <Build Include="Database\Tables\CompanyLanguage.sql" />
     <Build Include="Database\Tables\CompanySize.sql" />
     <Build Include="Database\Tables\CustomerType.sql" />
-    <Build Include="Database\Tables\Game_013_log.sql" />
     <Build Include="Database\Tables\Industry.sql" />
     <Build Include="Database\Tables\IntercomLog.sql" />
     <Build Include="Database\Tables\Language.sql" />
@@ -164,8 +163,6 @@
     <Build Include="Database\Tables\Staging\stgApiPreferences.sql" />
     <Build Include="Database\Tables\Staging\stgTeams.sql" />
     <Build Include="Database\Tables\Staging\stgUserPreferences.sql" />
-    <Build Include="Database\Tables\Game_013_logStages.sql" />
-    <Build Include="Database\Tables\Game_013_logCategories.sql" />
     <Build Include="Database\Logs\ApiEventLog.sql" />
     <Build Include="Database\Logs\ApiEventLogCompany.sql" />
     <Build Include="Database\Logs\ApiEventLogSCWUser.sql" />
@@ -201,5 +198,37 @@
     <Build Include="Database\Tables\Staging\stgCourseUsers.sql" />
     <Build Include="Database\Tables\Staging\stgAssessmentAttempts.sql" />
     <Build Include="Database\Tables\Staging\stgAssessments.sql" />
+    <Build Include="Database\Tables\Staging\stgCertificateTemplates.sql" />
+    <Build Include="Database\Logs\Game_013_log.sql" />
+    <Build Include="Database\Logs\Game_013_logCategories.sql" />
+    <Build Include="Database\Logs\Game_013_logStages.sql" />
+    <Build Include="Database\Logs\Staging\stgGame_013_Log.sql" />
+    <Build Include="Database\Tables\Staging\stgMetricsOffset.sql" />
+    <Build Include="Database\Tables\Staging\stgMetricsOutputLeaderboard.sql" />
+    <Build Include="Database\Tables\Staging\stgMetricsStrengthsWeaknesses.sql" />
+    <Build Include="Database\Tables\Staging\stgMetrics_013_Developer.sql" />
+    <Build Include="Database\Tables\Staging\stgRealms.sql" />
+    <Build Include="Database\Tables\Staging\stgState.sql" />
+    <Build Include="Database\Tables\Staging\stgLearningResourceVotes.sql" />
+    <Build Include="Database\Logs\Staging\stgLearningLog.sql" />
+    <Build Include="Database\Tables\Staging\stgMetricsState.sql" />
+    <Build Include="Database\Tables\Staging\stgMetrics_013_Game.sql" />
+    <Build Include="Database\Logs\Staging\stgMetrics_013_Log.sql" />
+    <Build Include="Database\Tables\Staging\stgMetrics_013_Management.sql" />
+    <Build Include="Database\Tables\Staging\stgInvalidChallenges.sql" />
+    <Build Include="Database\Logs\Staging\stgRatingsLog.sql" />
+    <Build Include="Database\Tables\Staging\stgSenseiBuild.sql" />
+    <Build Include="Database\Tables\Staging\stgSenseiCodeBase.sql" />
+    <Build Include="Database\Tables\Staging\stgSenseiDemoRules.sql" />
+    <Build Include="Database\Logs\Staging\stgSenseiLog.sql" />
+    <Build Include="Database\Tables\Staging\stgSenseiRepo.sql" />
+    <Build Include="Database\Tables\Staging\stgSenseiRuleSettings.sql" />
+    <Build Include="Database\Tables\Staging\stgSenseiTokens.sql" />
+    <Build Include="Database\Tables\Staging\stgChallengeAttempts.sql" />
+    <Build Include="Database\Tables\Staging\stgParticipants.sql" />
+    <Build Include="Database\Tables\Staging\stgQuestAttempts.sql" />
+    <Build Include="Database\Tables\Staging\stgQuests.sql" />
+    <Build Include="Database\Tables\Staging\stgTournaments.sql" />
+    <Build Include="Database\Tables\Staging\stgTrainingUsers.sql" />
   </ItemGroup>
 </Project>

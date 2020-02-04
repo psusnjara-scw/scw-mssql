@@ -1,6 +1,6 @@
 ﻿
 CREATE TABLE [Log].[ApiEventLogCompany] (
-    [ApiEventLogCompanyCompanyID]					INTEGER IDENTITY (1,1)	NOT NULL,
+    [ApiEventLogCompanyCompanyID]					BIGINT IDENTITY (1,1)	NOT NULL,
 	[ApiEventLogID]				BIGINT					NOT NULL,
     [CompaniesObject_id]		NVARCHAR(40)			NOT NULL,
 	[CompanyMongoIDHash]		BINARY(16)				NOT NULL,

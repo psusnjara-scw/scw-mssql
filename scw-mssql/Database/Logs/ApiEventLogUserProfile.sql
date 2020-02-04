@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [Log].[ApiEventLogUserProfile]
 (
-	[ApiEventLogUserProfileID]				INTEGER IDENTITY(1,1)	NOT NULL,
-	[ApiEventLogUserID]					INTEGER					NOT NULL,
+	[ApiEventLogUserProfileID]	BIGINT IDENTITY(1,1)	NOT NULL,
+	[ApiEventLogUserID]			BIGINT					NOT NULL,
 	[ProfileComplete]			BIT						NOT NULL,
 	[FirstName]					NVARCHAR(50)			NOT NULL,
 	[MiddleName]				NVARCHAR(50)			NULL,

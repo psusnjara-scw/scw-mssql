@@ -1,5 +1,5 @@
 ﻿
-CREATE TABLE [dbo].[stgIntercomLog]
+CREATE TABLE [Log].[stgIntercomLog]
 (
 	[stgIntercomLogID]		BIGINT IDENTITY(1,1)	NOT NULL,
     [ChangeStreamDetails]	NVARCHAR(MAX)	NOT NULL,

@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Game_013_logCategories]
+﻿CREATE TABLE [Log].[Game_013_logCategories]
 (
     [Game_013_logCategoriesID]	BIGINT IDENTITY(1,1)	NOT NULL,
 	[Game_013_logID]			BIGINT					NOT NULL,
@@ -9,7 +9,7 @@
 
 
     CONSTRAINT PK_Game_013_logCategories PRIMARY KEY CLUSTERED ([Game_013_logCategoriesID]),
-	CONSTRAINT FK_Game_013_logCategories_Game_013_LogID FOREIGN KEY (Game_013_logID) REFERENCES [dbo].[Game_013_log] (Game_013_logID)
+	CONSTRAINT FK_Game_013_logCategories_Game_013_LogID FOREIGN KEY (Game_013_logID) REFERENCES [Log].[Game_013_log] (Game_013_logID)
 
 );
 

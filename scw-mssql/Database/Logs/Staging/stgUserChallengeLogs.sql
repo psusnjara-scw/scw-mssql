@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[stgUserChallengeLogs]
+﻿CREATE TABLE [Log].[stgUserChallengeLogs]
 (
 	[stgUserChallengeLogsID]		BIGINT IDENTITY (1,1)	NOT NULL,
 	[ChangeStreamDetails]	NVARCHAR(MAX)	NOT NULL,

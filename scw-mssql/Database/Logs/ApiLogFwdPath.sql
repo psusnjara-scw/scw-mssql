@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[ApiLogFwdPath] (
-   [ApiLogFwdPathID]				INTEGER IDENTITY(1,1)	NOT NULL,
-   [ApiLogID]						INTEGER					NOT NULL,
+   [ApiLogFwdPathID]				BIGINT IDENTITY(1,1)	NOT NULL,
+   [ApiLogID]						BIGINT					NOT NULL,
    [PathValue]						NVARCHAR(100)			NULL,
    [LastUpdatedUTCDate]				DATETIME2				NOT NULL,
    

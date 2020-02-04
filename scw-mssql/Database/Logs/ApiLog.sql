@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[ApiLog] (
-    [ApiLogID]					INTEGER IDENTITY(1,1)	NOT NULL,
+    [ApiLogID]					BIGINT IDENTITY(1,1)	NOT NULL,
     [ApiLogObject_id]			NVARCHAR(40)			NOT NULL,
 	[CompanyID]					INTEGER					NOT NULL,
 	[HeaderHost]				NVARCHAR(40)			NULL,

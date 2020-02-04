@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [Log].[ApiEventLogSCWUser](
-	[ApiEventLogUserID]				INTEGER IDENTITY (1,1)	NOT NULL,
+	[ApiEventLogUserID]				BIGINT IDENTITY (1,1)	NOT NULL,
 	[ApiEventLogID]					BIGINT					NOT NULL,
-	[ApiEventLogTeamID]				INTEGER					NOT NULL,
-	[ApiEventLogCompanyID]			INTEGER					NOT NULL,
+	[ApiEventLogTeamID]				BIGINT					NOT NULL,
+	[ApiEventLogCompanyID]			BIGINT					NOT NULL,
 
     CONSTRAINT PK_ApiEventLogSCWUser PRIMARY KEY CLUSTERED ([ApiEventLogUserID]),
 	CONSTRAINT FK_ApiEventLogSCWUser_ApiEventLog_ApiEventLogID FOREIGN KEY (ApiEventLogID) REFERENCES [Log].[ApiEventLog] (ApiEventLogID),

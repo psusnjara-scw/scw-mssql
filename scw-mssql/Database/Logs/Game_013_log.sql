@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Game_013_log]
+﻿CREATE TABLE [Log].[Game_013_log]
 (
     [Game_013_logID]			BIGINT IDENTITY(1,1)	NOT NULL,
     [Game_013_logObject_id]		NVARCHAR(40)			NOT NULL,

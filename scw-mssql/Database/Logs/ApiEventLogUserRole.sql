@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [Log].[ApiEventLogUserRole]
 (
-	[ApiEventLogUserRoleID]	INTEGER IDENTITY(1,1)	NOT NULL,
-	[ApiEventLogUserAuthID]	INTEGER					NOT NULL,
-	[ApiEventLogUserID]		INTEGER					NOT NULL,
+	[ApiEventLogUserRoleID]	BIGINT IDENTITY(1,1)	NOT NULL,
+	[ApiEventLogUserAuthID]	BIGINT					NOT NULL,
+	[ApiEventLogUserID]		BIGINT					NOT NULL,
 	[ApiEventLogUserRoleDesc]	NVARCHAR(60)			NOT NULL,
 
 	CONSTRAINT PK_ApiEventLogUserRole PRIMARY KEY CLUSTERED ([ApiEventLogUserRoleID]),
