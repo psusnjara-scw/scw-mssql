@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[UserChallengLog] (
+﻿CREATE TABLE [Log].[UserChallengLog] (
 	[UserChallengLogID]			INTEGER	IDENTITY(1,1)	NOT NULL,
 	[UserChallengLogObject_id]	NVARCHAR(40)			NOT NULL,
 	[UserID]					INTEGER					NOT NULL,

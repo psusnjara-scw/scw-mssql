@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[IntercomLog] (
+﻿CREATE TABLE [Log].[IntercomLog] (
 	[IntercomLogID]				INTEGER IDENTITY (1,1)	NOT NULL,
 	[IntercomLogObject_id]		NVARCHAR(40)			NOT NULL,
 	[IntercomLogError]			NVARCHAR(60)			NOT NULL,

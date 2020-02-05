@@ -70,13 +70,9 @@
     <Folder Include="Database\Logs\Staging" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Database\InitialImportScripts\import_api_log_EU.sql" />
-    <None Include="Database\InitialImportScripts\import_api_log_US.sql" />
     <None Include="Database\InitialImportScripts\import_assessments_EU.sql" />
     <None Include="Database\InitialImportScripts\import_assessments_US.sql" />
     <None Include="Database\InitialImportScripts\import_challenges_EU.sql" />
-    <None Include="Database\InitialImportScripts\import_game013_log_EU.sql" />
-    <None Include="Database\InitialImportScripts\import_game013_log_US.sql" />
     <None Include="Database\InitialImportScripts\import_tournaments_EU.sql" />
     <None Include="Database\InitialImportScripts\import_tournaments_US.sql" />
     <None Include="Database\InitialImportScripts\import_users_EU.sql" />
@@ -109,7 +105,6 @@
     <Build Include="Database\Tables\CompanySize.sql" />
     <Build Include="Database\Tables\CustomerType.sql" />
     <Build Include="Database\Tables\Industry.sql" />
-    <Build Include="Database\Tables\IntercomLog.sql" />
     <Build Include="Database\Tables\Language.sql" />
     <Build Include="Database\Tables\LicenceAllowanceType.sql" />
     <Build Include="Database\Tables\Participant.sql" />
@@ -131,7 +126,6 @@
     <Build Include="Database\Tables\TournamentLanguage.sql" />
     <Build Include="Database\Tables\TournamentLeaderboard.sql" />
     <Build Include="Database\Tables\UserAuth.sql" />
-    <Build Include="Database\Tables\UserChallengeLog.sql" />
     <Build Include="Database\Tables\UserInviteReminders.sql" />
     <Build Include="Database\Tables\UserLoginHistory.sql" />
     <Build Include="Database\Tables\UserPreferences.sql" />
@@ -152,6 +146,7 @@
     <Build Include="Database\Views\TOP_10_CompanyLanguages.sql" />
     <Build Include="Database\Views\TOP_10_Industries.sql" />
     <None Include="Database\Views\TournamentsbyCompany.sql" />
+    <None Include="Database\Logs\InitialImportScripts\import_activity_log.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database\ReferenceData\Script.InsertRefDataPostDeploy.sql" />
@@ -230,5 +225,11 @@
     <Build Include="Database\Tables\Staging\stgQuests.sql" />
     <Build Include="Database\Tables\Staging\stgTournaments.sql" />
     <Build Include="Database\Tables\Staging\stgTrainingUsers.sql" />
+    <None Include="Database\Logs\InitialImportScripts\import_api_log_EU.sql" />
+    <None Include="Database\Logs\InitialImportScripts\import_api_log_US.sql" />
+    <None Include="Database\Logs\InitialImportScripts\import_game013_log_EU.sql" />
+    <None Include="Database\Logs\InitialImportScripts\import_game013_log_US.sql" />
+    <Build Include="Database\Logs\UserChallengeLog.sql" />
+    <Build Include="Database\Logs\IntercomLog.sql" />
   </ItemGroup>
 </Project>

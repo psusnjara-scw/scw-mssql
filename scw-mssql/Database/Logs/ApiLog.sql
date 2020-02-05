@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[ApiLog] (
+﻿CREATE TABLE [Log].[ApiLog] (
     [ApiLogID]					BIGINT IDENTITY(1,1)	NOT NULL,
     [ApiLogObject_id]			NVARCHAR(40)			NOT NULL,
 	[CompanyID]					INTEGER					NOT NULL,
