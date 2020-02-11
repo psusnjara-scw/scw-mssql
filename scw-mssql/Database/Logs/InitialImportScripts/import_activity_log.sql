@@ -27,7 +27,7 @@ CREATE TABLE #import_activity_log (
 SET @SQL = 'BULK INSERT #import_activity_log FROM ''' + @FileLocation + ''' WITH (ROWTERMINATOR = ''0x0a'' ); '
 SELECT @SQL
 EXEC (@SQL)
-SELECT * FROM #import_activity_log
+--SELECT * FROM #import_activity_log
 
 --
 --  Reformat the data into the various tables
@@ -35,18 +35,19 @@ SELECT * FROM #import_activity_log
 
 CREATE TABLE #activity_log (
 	[ActivityLogObject_id]		NVARCHAR(24)			NOT NULL,
-	ActivityLogUserObject_id	NVARCHAR(24)		NOT NULL,
-	[ActivityLogTimestamp]		DATETIME2				NOT NULL,
-	[CreatedDate]				DATETIME2				NOT NULL
+	[ActivityLogUserObject_id]	NVARCHAR(24)			NOT NULL,
+	[ActivityLogTimestamp]		NVARCHAR(40)			NOT NULL,
+	[CreatedDate]				NVARCHAR(40)				NULL
 	)
 ;
+
 
 --  Cursor through the rows for the initial import
 DECLARE @JSONShred  NVARCHAR(MAX) ; 
 
 DECLARE JSONIMPORT CURSOR FOR
- SELECT activity_logDetails
- FROM	#activity_log
+ SELECT TOP 10 activity_logDetails
+ FROM	#import_activity_log
 
 OPEN JSONIMPORT 
 FETCH NEXT FROM JSONIMPORT INTO @JSONShred
@@ -64,50 +65,31 @@ INSERT INTO #activity_log (
       ,[ActivityLogTimestamp]
       ,[CreatedDate]
 	  )
+
+
 SELECT * FROM   OPENJSON (@JSONShred) 
             WITH ( 
 				[ActivityLogObject_id]		NVARCHAR(40)			'$._id."$oid"' ,
 				[ActivityLogUserObject_id]	NVARCHAR(40)			'$._user',
-				[ActivityLogTimestamp]		DATETIME2				'$._realm',
-				[CreatedDate]					NVARCHAR(40)			'$._level'
+				[ActivityLogTimestamp]		NVARCHAR(40)			'$.timestamp_halfhour."$date"', 
+				[CreatedDate]				NVARCHAR(40)			'$._level'
 )
 
-UPDATE #activity_log
-	SET StartedDate_DEC = ROUND(CAST (CAST(StartedDate AS FLOAT) AS DECIMAL(18,1)),0),
-		CompletedDate_DEC = ROUND(CAST (CAST(CompletedDate_DEC AS FLOAT) AS DECIMAL(18,1)),0)
+-- Need to add in the : as requried whereas the source Mongo data does not have this 
+-- For example, 2018-12-11T02:30:00.000 +0000 
+SELECT SYSDATETIMEOFFSET ( )  ,
+		LEFT(ActivityLogTimestamp,26) + ':00'
+		,CONVERT(DATETIMEOFFSET, LEFT(ActivityLogTimestamp,26) + ':00') 
+	FROM #activity_log
 
---SELECT StartDate_DEC, CompletedDate_DEC FROM #activity_log
-
-UPDATE #activity_log
-	SET StartedDate_DEC = StartedDate_DEC / 60000,  -- convert milliseconds to minutes
-		CompletedDate_DEC = CompletedDate_DEC / 60000
-
---SELECT StartDate_DEC, CompletedDate_DEC FROM #activity_log
-
-
-INSERT INTO [dbo].[Game_013_log]
-SELECT [Game_013_logObject_id]
-      ,[Game_013_userObject_id]
-      ,[Realm_id]
-      ,[Level_id]
-      ,[Quest_desc]
-      ,[QuestAttempt_id]
-	  ,[Repository_id]
-      ,[ChallengeObject_id]
-      ,[cbl]
-      ,DATEADD(MINUTE, StartedDate_DEC, '1970-01-01') AS [StartedDate]
-      ,DATEADD(MINUTE, CompletedDate_DEC, '1970-01-01') AS [CompletedDate]
-      ,[TimeSpent]
-	  ,[Points]
-      ,[MaxPoints]
-      ,[AttemptIndex]
-      ,[Status]
-      ,[isAssessment]
-      ,[TotalHints]
-	  ,[LanguageName]
-	  ,[LanguageFramework]
-	  ,[WasOvercomeBefore]
-
+INSERT INTO [Log].[ActivityLog] (
+		[ActivityLogObject_id]
+       ,[ActivityLogUserID]
+       ,[ActivityLogTimestamp]
+	  )
+SELECT [ActivityLogObject_id]
+      ,[ActivityLogUserID]
+      ,[ActivityLogTimestamp]
 FROM	#activity_log
 
 

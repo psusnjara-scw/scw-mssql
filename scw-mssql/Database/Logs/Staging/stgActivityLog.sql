@@ -4,6 +4,6 @@
     [ChangeStreamDetails]	NVARCHAR(MAX)	NOT NULL,
 	[InsertedUTCDate]		DATETIMEOFFSET	NOT NULL	CONSTRAINT DF_stgActivityLog_InsertedUTCDate DEFAULT GETUTCDATE() ,
 
-	CONSTRAINT PK_stgActivityLog PRIMARY KEY CLUSTERED ([stgActivityLogID])
+	CONSTRAINT PK_stgActivityLog PRIMARY KEY CLUSTERED ([stgActivityLogID]) 
 
 )

@@ -2,7 +2,7 @@
 CREATE TABLE [dbo].[Company] (
     [CompanyID]					INTEGER IDENTITY (1,1)	NOT NULL,
     [CompaniesObject_id]		NVARCHAR(40)			NOT NULL,
-	[CompanyMongoIDHash]		BINARY(16)				NOT NULL,
+	[CompanyMongoIDHash]		VARBINARY(8000)			NOT NULL,
     [SsoErrorMessage]			NVARCHAR(20)			NULL,  -- appears to be null always ?
 	[AccountOwnerID]			INTEGER					NOT NULL,			-- FK to user
     [ExpirationDate]			DATETIME2				NULL, -- DOUBLE PRECISION,  -- convert to date 

@@ -76,7 +76,7 @@
     <None Include="Database\InitialImportScripts\import_tournaments_EU.sql" />
     <None Include="Database\InitialImportScripts\import_tournaments_US.sql" />
     <None Include="Database\InitialImportScripts\import_users_EU.sql" />
-    <None Include="Database\InitialImportScripts\ImportCompanies_EU.sql" />
+    <None Include="Database\InitialImportScripts\Import_companies_EU.sql" />
     <None Include="Database\ReferenceData\ins_CompanySize.sql" />
     <None Include="Database\ReferenceData\ins_CustomerType.sql" />
     <None Include="Database\ReferenceData\ins_Industry.sql" />
@@ -149,7 +149,7 @@
     <None Include="Database\Logs\InitialImportScripts\import_activity_log.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Database\ReferenceData\Script.InsertRefDataPostDeploy.sql" />
+    <PostDeploy Include="Database\ReferenceData\Script.InsertRefDataPostDeploy.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Database\Tables\Staging\stgCompanies.sql" />
@@ -231,5 +231,7 @@
     <None Include="Database\Logs\InitialImportScripts\import_game013_log_US.sql" />
     <Build Include="Database\Logs\UserChallengeLog.sql" />
     <Build Include="Database\Logs\IntercomLog.sql" />
+    <None Include="Database\InitialImportScripts\import_users.sql" />
+    <None Include="Database\InitialImportScripts\Import_companies.sql" />
   </ItemGroup>
 </Project>
