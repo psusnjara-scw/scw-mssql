@@ -68,6 +68,7 @@
     <Folder Include="Database\Logs\Schema" />
     <Folder Include="Database\Logs\InitialImportScripts" />
     <Folder Include="Database\Logs\Staging" />
+    <Folder Include="Database\Tables\InitialImport" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database\InitialImportScripts\import_assessments_EU.sql" />
@@ -233,5 +234,9 @@
     <Build Include="Database\Logs\IntercomLog.sql" />
     <None Include="Database\InitialImportScripts\import_users.sql" />
     <None Include="Database\InitialImportScripts\Import_companies.sql" />
+    <Build Include="Database\Tables\InitialImport\importcompanies.sql" />
+    <Build Include="Database\Tables\InitialImport\importusers.sql" />
+    <Build Include="Database\Tables\InitialImport\importteams.sql" />
+    <None Include="Database\InitialImportScripts\ImportCompanyTeamUser.sql" />
   </ItemGroup>
 </Project>
